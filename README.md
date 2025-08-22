@@ -1,5 +1,6 @@
 # web_ck_php
 
+
 ## Giới thiệu
 Dự án `web_ck_php` cung cấp một ví dụ tối giản về ứng dụng web viết bằng PHP.
 
@@ -16,3 +17,15 @@ Dự án `web_ck_php` cung cấp một ví dụ tối giản về ứng dụng w
 
 ## Thư viện
 Hiện tại dự án không sử dụng bất kỳ thư viện bên ngoài nào.
+=======
+Ứng dụng đơn giản hiển thị biểu đồ chứng khoán với dữ liệu demo sử dụng Chart.js.
+
+## Chạy
+
+Sử dụng máy chủ PHP tích hợp:
+
+```bash
+php -S localhost:8000 -t public
+```
+
+Sau đó truy cập vào [http://localhost:8000](http://localhost:8000) để xem biểu đồ.
