@@ -1,8 +1,7 @@
 # web_ck_php
 
-
 ## Giới thiệu
-Dự án `web_ck_php` cung cấp một ví dụ tối giản về ứng dụng web viết bằng PHP hiển thị biểu đồ nến (candlestick) cho dữ liệu chứng khoán demo.
+Dự án `web_ck_php` cung cấp một ví dụ tối giản về ứng dụng web viết bằng PHP hiển thị biểu đồ nến (candlestick) cho dữ liệu chứng khoán.
 
 ## Yêu cầu
 - PHP >= 7.4
@@ -15,6 +14,9 @@ Dự án `web_ck_php` cung cấp một ví dụ tối giản về ứng dụng w
    ```
 3. Truy cập `http://localhost:8000` để xem ứng dụng.
 
+## Lấy dữ liệu chứng khoán
+Endpoint `public/fetch_stock.php` sử dụng API của Alpha Vantage (khóa `demo`) để tải dữ liệu giá cổ phiếu hằng ngày. Có thể truyền mã cổ phiếu bằng tham số `symbol`, ví dụ `fetch_stock.php?symbol=IBM`. Trang `index.php` sẽ gọi endpoint này để hiển thị biểu đồ.
+
 ## Thư viện
 Ứng dụng sử dụng các thư viện:
 
@@ -22,14 +24,5 @@ Dự án `web_ck_php` cung cấp một ví dụ tối giản về ứng dụng w
 - [chartjs-chart-financial](https://github.com/chartjs/chartjs-chart-financial)
 - [Luxon](https://moment.github.io/luxon/)
 
-Biểu đồ hiển thị dữ liệu chứng khoán mẫu với nhiều điểm dữ liệu hơn.
+Biểu đồ hiển thị dữ liệu chứng khoán với nhiều điểm dữ liệu.
 
-## Chạy
-
-Sử dụng máy chủ PHP tích hợp:
-
-```bash
-php -S localhost:8000 -t public
-```
-
-Sau đó truy cập vào [http://localhost:8000](http://localhost:8000) để xem biểu đồ.

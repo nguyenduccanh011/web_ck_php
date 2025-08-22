@@ -14,39 +14,33 @@
     <script>
         const ctx = document.getElementById('stockChart').getContext('2d');
 
-        // Dữ liệu giá cổ phiếu demo với định dạng OHLC
-        const data = [
-            { x: '2023-10-02', o: 100, h: 110, l: 95, c: 108 },
-            { x: '2023-10-03', o: 108, h: 112, l: 104, c: 110 },
-            { x: '2023-10-04', o: 110, h: 115, l: 107, c: 112 },
-            { x: '2023-10-05', o: 112, h: 118, l: 110, c: 116 },
-            { x: '2023-10-06', o: 116, h: 120, l: 114, c: 118 },
-            { x: '2023-10-09', o: 118, h: 122, l: 116, c: 120 },
-            { x: '2023-10-10', o: 120, h: 125, l: 119, c: 123 },
-            { x: '2023-10-11', o: 123, h: 130, l: 121, c: 128 },
-            { x: '2023-10-12', o: 128, h: 132, l: 126, c: 130 },
-            { x: '2023-10-13', o: 130, h: 135, l: 128, c: 133 }
-        ];
-
-        new Chart(ctx, {
-            type: 'candlestick',
-            data: {
-                datasets: [{
-                    label: 'Giá (USD)',
-                    data: data
-                }]
-            },
-            options: {
-                scales: {
-                    x: {
-                        type: 'time',
-                        time: {
-                            unit: 'day'
+        fetch('fetch_stock.php?symbol=IBM')
+            .then(response => response.json())
+            .then(data => {
+                new Chart(ctx, {
+                    type: 'candlestick',
+                    data: {
+                        datasets: [{
+                            label: 'Giá IBM (USD)',
+                            data: data
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            x: {
+                                type: 'time',
+                                time: {
+                                    unit: 'day'
+                                }
+                            }
                         }
                     }
-                }
-            }
-        });
+                });
+            })
+            .catch(error => {
+                console.error('Error loading data', error);
+            });
     </script>
 </body>
 </html>
+
