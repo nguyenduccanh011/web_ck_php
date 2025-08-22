@@ -2,7 +2,7 @@
 
 
 ## Giới thiệu
-Dự án `web_ck_php` cung cấp một ví dụ tối giản về ứng dụng web viết bằng PHP.
+Dự án `web_ck_php` cung cấp một ví dụ tối giản về ứng dụng web viết bằng PHP hiển thị biểu đồ nến (candlestick) cho dữ liệu chứng khoán demo.
 
 ## Yêu cầu
 - PHP >= 7.4
@@ -16,9 +16,13 @@ Dự án `web_ck_php` cung cấp một ví dụ tối giản về ứng dụng w
 3. Truy cập `http://localhost:8000` để xem ứng dụng.
 
 ## Thư viện
-Hiện tại dự án không sử dụng bất kỳ thư viện bên ngoài nào.
-=======
-Ứng dụng đơn giản hiển thị biểu đồ chứng khoán với dữ liệu demo sử dụng Chart.js.
+Ứng dụng sử dụng các thư viện:
+
+- [Chart.js](https://www.chartjs.org/)
+- [chartjs-chart-financial](https://github.com/chartjs/chartjs-chart-financial)
+- [Luxon](https://moment.github.io/luxon/)
+
+Biểu đồ hiển thị dữ liệu chứng khoán mẫu với nhiều điểm dữ liệu hơn.
 
 ## Chạy
 
